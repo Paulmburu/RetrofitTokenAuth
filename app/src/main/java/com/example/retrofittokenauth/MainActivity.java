@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     private static String token;
 
     private void login(){
-        Login login=new Login("charles@deveint.com","deveint#");
+        Login login=new Login("","");
 
         Call<User> call = userClient.login(login);
 
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getSecret(){
-        Call<ResponseBody> call = userClient.getSecret("Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYwYTliMzM0YzcwMDExYmUyMGM0NjgxYzMwYWZlMzhlNThiMTAwODRjOGIzN2NkYWI2ZGQwYjI2ZjRkZWVhNTkyNGZjM2YxYWU1NDM5NzIxIn0.eyJhdWQiOiIyIiwianRpIjoiNjBhOWIzMzRjNzAwMTFiZTIwYzQ2ODFjMzBhZmUzOGU1OGIxMDA4NGM4YjM3Y2RhYjZkZDBiMjZmNGRlZWE1OTI0ZmMzZjFhZTU0Mzk3MjEiLCJpYXQiOjE1NTc0ODEyOTAsIm5iZiI6MTU1NzQ4MTI5MCwiZXhwIjoxNTg5MTAzNjkwLCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.qqj8BEA_8cPVSgYUbsMgWtjEFEqEj9zhYbZhVkO9USvTeLRD4tpsCFiBiaHIZJt4xSUrGXVutO5l5Ajj8aD3Ct1tje_Bn_Y-gwTyvBdcq5Nfli90X2InqOjp6LmpMFrOKjhEY_ebb6W6ZM5Kd57XcwdMiz26yyG5-zyqPtg_Cl0eEO-ZdNvjhVjAZvN92zkZOgA0-Z3XcosHTNgn3NnpGS5Hy_PlQ_fsGiYd0mbNPq4Lk943uh1tC-RoUjEtPAxb-KX21pABHqyyBX19pJr5aCKDLzhg_XbmaEVg2PlaeamEdcRqF8GdqNNNi0V36kVT2E8arykbvsMSgUxGP3559BBWaqsty4SiuUhQhhDc4PwU0-_l9tf56OCIr_sIXnbpfGvyGC_juoWl_8ihBQyJ1pPxGjWytWfRLLOdAo66vKfbPWr7RpKBEh0wJ49vFsiidmJ8EqCQB9hU_0gNRu2OX3zNsmDP0eCZiK3o3wxmTabwkckEDorrr0DY6pHSI8lyt37kSNZOVo5sqQRSas_BlbHf9-Pzd5FK_kfZ7AHu1T28AKu9umWPC6pqaTXEbH56rZwMYzHMDK904dMXpmBtoBHZCOjLyekE4gVKHETNnomfGlxhrpiWNvjBHyRaVp7Y-8wpgyFCVaNjYfXwHwUnGuhAgpFjdVGumGgkqB0BcXA");
+        Call<ResponseBody> call = userClient.getSecret(token);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
